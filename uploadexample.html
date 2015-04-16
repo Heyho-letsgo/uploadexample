@@ -10,7 +10,9 @@
 </body>
 
 <template name="hello">
-<h3>Uploads Section</h3>
+  {{> loginButtons}}
+{{#if currentUser}}
+    <h3>Uploads Section</h3>
     <p>
         Add Files
         <span class="btn btn-default btn-file">
@@ -26,8 +28,11 @@
         {{#each uploads}}
         <tr>
 
+            <td><img src="{{url}}" class="img-responsive img-rounded" alt="{{name}} {{updatedAt}} {{size}} {{type}}" height="40" width="40"></td>
             <td>{{name}}</td>
-
+            <td>{{updatedAt}}</td>
+            <td>{{size}}</td>
+            <td>{{type}}</td>
             <td>
                 <a class="btn btn-primary" href="{{url download=true}}">Download</a>
             </td>
@@ -35,4 +40,5 @@
         {{/each}}
         </tbody>
     </table>
+  {{/if}}
 </template>
