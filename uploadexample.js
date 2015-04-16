@@ -1,5 +1,5 @@
 Uploads = new FS.Collection('uploads',{
-  stores:[new FS.Store.FileSystem('uploads',{path:'~/projectUploads'})]
+  stores:[new FS.Store.FileSystem('uploads',{path:'~/workspace/meteor/exos/uploadexample/public'})]
 });
 
 
